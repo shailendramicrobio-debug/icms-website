@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ICMS 2027 - International Conference on Microbiological Sciences, Dr. Rammanohar Lohia Avadh University, Ayodhya.">
+  <title>Scientific Programme | ICMS 2027</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">ICMS</span>
+      <span><strong>ICMS 2027</strong><small>International Conference on Microbiological Sciences</small></span>
+    </a>
+    <button class="menu-toggle" aria-label="Open menu">☰</button>
+    <nav class="nav"><a href="index.html">Home</a><a href="about.html">About</a><a href="programme.html" class="active">Programme</a><a href="speakers.html">Speakers</a><a href="abstract.html">Abstract</a><a href="registration.html">Registration</a><a href="venue.html">Venue & Ayodhya</a><a href="contact.html">Contact</a></nav>
+  </div>
+</header>
+<main>
+<section class="section section-dark" id="programme">
+<div class="container two-col programme-intro">
+<div>
+<p class="section-label light">PROGRAMME</p>
+<h2>Three days of science, dialogue and discovery.</h2>
+</div>
+<div class="timeline">
+<div class="timeline-item"><b>DAY 01</b><span>07 January 2027</span><p>Inauguration • Keynote Sessions • Scientific Sessions</p></div>
+<div class="timeline-item"><b>DAY 02</b><span>08 January 2027</span><p>Technical Sessions • Poster Presentations • Young Scientist Sessions</p></div>
+<div class="timeline-item"><b>DAY 03</b><span>09 January 2027</span><p>Technical Sessions • Valedictory Session • Awards &amp; Closing</p></div>
+</div>
+</div>
+</section>
+</main>
+<footer>
+  <div class="container footer-inner">
+    <div><strong>ICMS 2027</strong><p>International Conference on Microbiological Sciences</p></div>
+    <p>© 2027 ICMS • Dr. Rammanohar Lohia Avadh University</p>
+  </div>
+</footer>
+<script>
+  const toggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('.nav');
+  toggle.addEventListener('click', () => nav.classList.toggle('open'));
+  document.querySelectorAll('.nav a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
+</script>
+</body>
+</html>

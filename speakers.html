@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ICMS 2027 - International Conference on Microbiological Sciences, Dr. Rammanohar Lohia Avadh University, Ayodhya.">
+  <title>Leadership & Speakers | ICMS 2027</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">ICMS</span>
+      <span><strong>ICMS 2027</strong><small>International Conference on Microbiological Sciences</small></span>
+    </a>
+    <button class="menu-toggle" aria-label="Open menu">☰</button>
+    <nav class="nav"><a href="index.html">Home</a><a href="about.html">About</a><a href="programme.html">Programme</a><a href="speakers.html" class="active">Speakers</a><a href="abstract.html">Abstract</a><a href="registration.html">Registration</a><a href="venue.html">Venue & Ayodhya</a><a href="contact.html">Contact</a></nav>
+  </div>
+</header>
+<main>
+<section class="section" id="speakers">
+<div class="container">
+<p class="section-label">CONFERENCE LEADERSHIP</p>
+<h2>Conference Leadership</h2>
+<p class="muted">ICMS–2027 is guided by distinguished academic and scientific leaders from the university and the microbiology community.</p>
+<div class="leadership-grid leadership-grid-three">
+<article class="leader-card chief-patron">
+<div class="leader-photo"><img alt="Dr. (Col.) Bijendra Singh, Chief Patron, ICMS 2027" src="images/speakers/vice-chancellor.jpeg"/></div>
+<div class="leader-content">
+<span class="leader-title">CHIEF PATRON</span>
+<h3>Dr. (Col.) Bijendra Singh</h3>
+<p class="leader-affiliation">Vice Chancellor<br/>Dr. Rammanohar Lohia Avadh University, Ayodhya</p>
+</div>
+</article>
+<article class="leader-card">
+<div class="leader-photo"><img alt="Dr. A.M. Deshmukh, Patron, ICMS 2027" src="images/speakers/deshmukh.jpeg"/></div>
+<div class="leader-content">
+<span class="leader-title">PATRON</span>
+<h3>Dr. A.M. Deshmukh</h3>
+<p class="leader-affiliation">National President<br/>Microbiologists Society, India</p>
+</div>
+</article>
+<article class="leader-card">
+<div class="leader-photo"><img alt="Prof. Shailendra Kumar, Organizing Chair, ICMS 2027" src="images/speakers/shailendra-kumar.jpeg"/></div>
+<div class="leader-content">
+<span class="leader-title">ORGANIZING CHAIR</span>
+<h3>Prof. Shailendra Kumar</h3>
+<p class="leader-affiliation">Professor &amp; Head, Department of Microbiology<br/>Dr. Rammanohar Lohia Avadh University, Ayodhya</p>
+</div>
+</article>
+</div>
+<div class="section-subheading speaker-heading">
+<p class="section-label">SCIENTIFIC COMMUNITY</p>
+<h3>Invited Speaker</h3>
+</div>
+<div class="speaker-grid single-speaker">
+<article class="speaker">
+<img alt="Prof. H. N. Thatoi, Invited Speaker, ICMS 2027" src="images/speakers/thatoi.jpeg"/>
+<h3>Prof. H. N. Thatoi</h3>
+<p class="speaker-role">Invited Speaker</p>
+<p class="speaker-affiliation">Director, CIBR<br/>Siksha 'O' Anusandhan Deemed to be University, Bhubaneswar</p>
+</article>
+</div>
+</div>
+</section>
+</main>
+<footer>
+  <div class="container footer-inner">
+    <div><strong>ICMS 2027</strong><p>International Conference on Microbiological Sciences</p></div>
+    <p>© 2027 ICMS • Dr. Rammanohar Lohia Avadh University</p>
+  </div>
+</footer>
+<script>
+  const toggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('.nav');
+  toggle.addEventListener('click', () => nav.classList.toggle('open'));
+  document.querySelectorAll('.nav a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
+</script>
+</body>
+</html>
