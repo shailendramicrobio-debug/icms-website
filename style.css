@@ -323,3 +323,10 @@ body{background:#fff;color:var(--ink)}
 footer{background:linear-gradient(135deg,#0f172a,#172554 55%,#164e63)}
 .footer-inner strong{color:#67e8f9}
 @media(max-width:560px){.hero{background:linear-gradient(160deg,#11183b,#1e3a8a 55%,#0891b2)} }
+
+
+/* ICMS 2027 — Leadership & invited speaker photo refinements */
+#speakers .leader-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+#speakers .single-speaker{grid-template-columns:minmax(0,320px);justify-content:start}
+#speakers .single-speaker .speaker{height:100%}
+@media(max-width:560px){#speakers .single-speaker{grid-template-columns:1fr}}
