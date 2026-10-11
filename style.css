@@ -347,3 +347,50 @@ footer{background:linear-gradient(135deg,#0f172a,#172554 55%,#164e63)}
 .nav a.active{color:#fff;font-weight:800;position:relative}
 .nav a.active::after{content:"";position:absolute;left:10px;right:10px;bottom:-7px;height:3px;border-radius:999px;background:linear-gradient(90deg,#22d3ee,#f59e0b)}
 @media (max-width:900px){.nav a.active::after{display:none}}
+
+
+/* Shared conference header with university and society logos */
+.header-shell{display:flex;flex-direction:column;align-items:stretch;gap:7px;padding:8px 0 10px}
+.header-identity{display:flex;align-items:center;justify-content:center;gap:22px;min-height:68px}
+.header-logo-link{display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+.header-logo{display:block;object-fit:contain;width:62px;height:62px}
+.mbsi-header-logo{width:66px;height:66px}
+.header-identity .brand{gap:10px}
+.header-identity .brand-mark{width:48px;height:48px;flex:0 0 48px}
+.header-identity .brand strong{font-size:20px;color:#172554}
+.header-identity .brand small{font-size:11px}
+.nav-row{display:flex;justify-content:center;align-items:center;min-height:30px}
+.nav-row .nav{gap:clamp(10px,1.7vw,23px);font-size:12px}
+.nav-row .menu-toggle{margin-left:auto}
+body.inner-page{background:linear-gradient(135deg,#f4f8ff 0%,#f0fbf8 48%,#f7f4ff 100%);min-height:100vh}
+body.inner-page main .section{background:linear-gradient(135deg,#f5f9ff 0%,#edf8f6 55%,#f7f3ff 100%)}
+body.inner-page main .section.section-accent{background:linear-gradient(135deg,#e7f8ef,#edf9e8)}
+body.inner-page main .section.section-dark{background:linear-gradient(135deg,#eef7ff,#eaf7f3);color:#17324b}
+body.inner-page main .section.section-dark .section-label,
+body.inner-page main .section.section-dark .timeline-item b{color:#2563a6}
+body.inner-page main .section.section-dark .timeline{border-color:rgba(37,99,166,.24)}
+body.inner-page main .section.section-dark .timeline-item span{color:#526a83}
+body.inner-page main .section.section-dark .timeline-item p{color:#29445f}
+@media(max-width:900px){
+ .header-identity{gap:14px}
+ .header-logo{width:52px;height:52px}
+ .mbsi-header-logo{width:56px;height:56px}
+ .nav-row{justify-content:flex-end}
+ .nav-row .nav{gap:13px}
+}
+@media(max-width:850px){
+ .header-shell{gap:4px}
+ .nav-row{min-height:35px}
+ .nav-row .nav{top:140px;left:0;right:0}
+ .nav-row .menu-toggle{display:block}
+}
+@media(max-width:560px){
+ .header-identity{gap:9px;justify-content:space-between}
+ .header-logo{width:42px;height:42px}
+ .mbsi-header-logo{width:44px;height:44px}
+ .header-identity .brand{gap:6px}
+ .header-identity .brand-mark{width:37px;height:37px;flex-basis:37px;font-size:11px}
+ .header-identity .brand strong{font-size:15px}
+ .header-identity .brand small{font-size:8px;max-width:155px;line-height:1.2}
+ .nav-row .nav{top:112px}
+}
