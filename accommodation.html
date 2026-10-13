@@ -115,5 +115,28 @@
 <p>07–09 January 2027 | Department of Microbiology, Dr. Rammanohar Lohia Avadh University, Ayodhya</p>
 </div>
 </footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const menuButton = document.querySelector(".menu-toggle");
+    const nav = document.querySelector(".nav");
+
+    if (menuButton && nav) {
+        menuButton.setAttribute("aria-expanded", "false");
+
+        menuButton.addEventListener("click", function () {
+            const isOpen = nav.classList.toggle("open");
+
+            menuButton.setAttribute("aria-expanded", String(isOpen));
+            menuButton.setAttribute(
+                "aria-label",
+                isOpen ? "Close menu" : "Open menu"
+            );
+        });
+    }
+});
+</script>
+</body>
+</html>
 </body>
 </html>
