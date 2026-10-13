@@ -545,3 +545,68 @@ body.inner-page main .section.section-dark .timeline-item p{color:#29445f}
 @media(max-width:850px){.icms-news-date-grid,.icms-initiative-grid{grid-template-columns:1fr 1fr}.icms-partner-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:560px){.icms-news-date-grid,.icms-partner-grid,.icms-initiative-grid{grid-template-columns:1fr}.icms-update-card{padding:21px}.icms-date-known{align-items:flex-start;flex-direction:column;gap:4px}.icms-initiative-card{min-height:112px}}
 @media(prefers-reduced-motion:reduce){.icms-news-track{animation:none;flex-wrap:wrap;width:auto}.icms-news-window{overflow:visible}}
+/* Highlighted registration concessions */
+.concession-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 18px 20px;
+    margin: 16px 0;
+    background: linear-gradient(135deg, #eaf7ff, #f5faff);
+    border: 1px solid #8cccf0;
+    border-left: 5px solid #0877b9;
+    border-radius: 12px;
+    color: #18354d;
+    box-shadow: 0 4px 12px rgba(0, 65, 110, 0.08);
+}
+
+.concession-note .note-icon {
+    font-size: 28px;
+    line-height: 1.3;
+    flex-shrink: 0;
+}
+
+.concession-note strong {
+    display: block;
+    color: #075985;
+    font-size: 17px;
+    margin-bottom: 6px;
+}
+
+.concession-note p {
+    margin: 0;
+    color: #263b4d;
+    line-height: 1.65;
+}
+
+.concession-note p strong {
+    display: inline;
+    color: #b42318;
+    font-size: inherit;
+    margin: 0;
+}
+
+.group-note {
+    background: linear-gradient(135deg, #edfff5, #f7fff9);
+    border-color: #91d9b0;
+    border-left-color: #16834a;
+}
+
+.group-note > div > strong {
+    color: #116b3a;
+}
+
+@media (max-width: 600px) {
+    .concession-note {
+        padding: 14px;
+        gap: 10px;
+    }
+
+    .concession-note .note-icon {
+        font-size: 24px;
+    }
+
+    .concession-note strong {
+        font-size: 15px;
+    }
+}
