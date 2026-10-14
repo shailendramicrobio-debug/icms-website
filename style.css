@@ -610,6 +610,23 @@ body.inner-page main .section.section-dark .timeline-item p{color:#29445f}
         font-size: 15px;
     }
 }
+
+
+/* ICMS 2027 banner header — isolated overrides; original page styles preserved */
+.icms-banner-site-header { padding: 0; background: #fff; }
+.icms-banner-header-row { width: 100%; display: flex; align-items: center; justify-content: center; gap: 10px; padding: 6px 12px; box-sizing: border-box; background: #fff; }
+.icms-banner-link { display: flex; align-items: center; justify-content: center; flex: 0 1 auto; min-width: 0; line-height: 0; }
+.icms-header-banner-image { display: block; height: clamp(90px, 10vw, 150px); width: auto; max-width: 100%; object-fit: contain; }
+.icms-side-logo { display: flex; flex: 0 0 auto; height: clamp(90px, 10vw, 150px); width: clamp(90px, 10vw, 150px); align-items: center; justify-content: center; overflow: hidden; background: #fff; }
+.icms-side-logo img { display: block; width: 100%; height: 100%; object-fit: contain; background: transparent; }
+.icms-banner-site-header .nav-row { min-height: 30px; }
+@media (max-width: 700px) {
+  .icms-banner-header-row { gap: 4px; padding: 4px; }
+  .icms-header-banner-image { height: 64px; max-width: calc(100vw - 136px); }
+  .icms-side-logo { width: 62px; height: 64px; }
+  .icms-banner-site-header .nav-row { padding: 0 8px; }
+}
+
 /* Glowing and glittering Important Dates card */
 .icms-dates-card.dates-glow {
   position: relative;
@@ -672,5 +689,42 @@ body.inner-page main .section.section-dark .timeline-item p{color:#29445f}
   .icms-dates-card.dates-glow,
   .icms-dates-card.dates-glow::after {
     animation: none;
+  }
+}
+
+/* Highlight important dates in blue */
+.icms-dates-card .icms-date-placeholder p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #173B69;
+}
+
+.icms-dates-card .icms-date-placeholder p strong {
+  color: #0756B3;
+  font-size: 19px;
+  font-weight: 800;
+}
+
+/* Make the Important Dates heading stand out */
+.icms-dates-card .icms-date-placeholder > div > strong {
+  display: block;
+  color: #0756B3;
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+/* Adjust font size on mobile */
+@media (max-width: 600px) {
+  .icms-dates-card .icms-date-placeholder p {
+    font-size: 16px;
+  }
+
+  .icms-dates-card .icms-date-placeholder p strong {
+    font-size: 17px;
+  }
+
+  .icms-dates-card .icms-date-placeholder > div > strong {
+    font-size: 20px;
   }
 }
