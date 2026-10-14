@@ -610,3 +610,67 @@ body.inner-page main .section.section-dark .timeline-item p{color:#29445f}
         font-size: 15px;
     }
 }
+/* Glowing and glittering Important Dates card */
+.icms-dates-card.dates-glow {
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #ffbd35;
+  animation: datesGlow 1.8s ease-in-out infinite;
+  box-shadow: 0 0 8px rgba(255, 193, 7, 0.55);
+}
+
+/* Animated glowing border */
+@keyframes datesGlow {
+  0%, 100% {
+    box-shadow: 0 0 6px rgba(255, 193, 7, 0.45),
+                0 0 12px rgba(255, 153, 0, 0.25);
+    border-color: #ffbd35;
+  }
+  50% {
+    box-shadow: 0 0 14px rgba(255, 193, 7, 0.9),
+                0 0 24px rgba(255, 153, 0, 0.55);
+    border-color: #ff6b00;
+  }
+}
+
+/* Highlight the dates */
+.icms-dates-card .icms-date-placeholder p strong {
+  color: #b42318;
+  font-weight: 800;
+}
+
+/* Subtle glitter effect */
+.icms-dates-card.dates-glow::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -70%;
+  width: 35%;
+  height: 200%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.55),
+    transparent
+  );
+  transform: rotate(20deg);
+  pointer-events: none;
+  animation: datesShimmer 3.5s ease-in-out infinite;
+}
+
+@keyframes datesShimmer {
+  0% {
+    left: -70%;
+  }
+  65%, 100% {
+    left: 140%;
+  }
+}
+
+/* Respect visitors who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .icms-dates-card.dates-glow,
+  .icms-dates-card.dates-glow::after {
+    animation: none;
+  }
+}
