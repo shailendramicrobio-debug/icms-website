@@ -831,3 +831,6 @@ body.inner-page main .section.section-dark .timeline-item p{color:#29445f}
     animation: none;
   }
 }
+
+/* Post-Conference Tour homepage promotion */
+.post-tour-promo{background:linear-gradient(135deg,#f0faf8,#fff8e9);padding:48px 0}.post-tour-promo-grid{display:grid;grid-template-columns:1fr minmax(260px,390px);align-items:center;gap:32px}.post-tour-promo h2{margin:.2em 0;color:var(--ink);font-size:clamp(1.7rem,3vw,2.5rem);line-height:1.2}.post-tour-promo p{color:var(--muted)}.post-tour-promo .post-tour-fee{color:var(--ink)}.post-tour-promo-grid>a img{display:block;width:100%;height:auto;max-height:430px;object-fit:cover;object-position:top;border-radius:14px;box-shadow:0 10px 28px rgba(16,35,58,.14)}@media(max-width:700px){.post-tour-promo-grid{grid-template-columns:1fr}.post-tour-promo-grid>a{max-width:400px;margin:auto}}
