@@ -5,6 +5,69 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Accommodation | ICMS–2027</title>
 <link rel="stylesheet" href="style.css">
+<style>
+/* Accommodation-page-only styling. Shared stylesheet and all other pages remain unchanged. */
+.accom-page{--ac-ink:#142c42;--ac-muted:#5d7082;--ac-teal:#087f78;--ac-mint:#e9f7f3;--ac-line:#dce9e6;color:var(--ac-ink);background:#f7faf9;padding-bottom:68px}
+.accom-page .accom-hero{position:relative;overflow:hidden;background:linear-gradient(120deg,#071a25 0%,#0c4149 58%,#087f78 100%);color:#fff;padding:68px 0 76px}
+.accom-page .accom-hero:after{content:"";position:absolute;width:370px;height:370px;border:1px solid #ffffff25;border-radius:50%;right:-85px;top:-170px;box-shadow:0 0 0 55px #ffffff08,0 0 0 110px #ffffff06}
+.accom-page .hero-inner{position:relative;z-index:1;max-width:900px}
+.accom-page .eyebrow{display:inline-flex;align-items:center;gap:9px;color:#a5eee1;text-transform:uppercase;letter-spacing:.15em;font-size:13px;font-weight:900;margin-bottom:14px}
+.accom-page .eyebrow:before{content:"";width:27px;height:3px;border-radius:5px;background:#e4b45f}
+.accom-page .accom-hero h1{font-size:clamp(42px,6vw,68px);line-height:1.02;letter-spacing:-.04em;margin:0 0 18px;color:#fff}
+.accom-page .accom-hero p{max-width:760px;color:#e1f0ef;font-size:18px;margin:0}
+.accom-page .hero-pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:25px}
+.accom-page .hero-pills span{border:1px solid #ffffff38;background:#ffffff12;border-radius:999px;padding:8px 13px;font-size:13px;font-weight:750;color:#fff}
+.accom-page .accom-section{padding:54px 0 0}
+.accom-page .section-kicker{font-size:12px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--ac-teal);margin:0 0 9px}
+.accom-page h2{font-size:clamp(28px,3.5vw,40px);line-height:1.12;letter-spacing:-.03em;color:var(--ac-ink);margin:0 0 13px}
+.accom-page .section-intro{color:var(--ac-muted);font-size:16px;max-width:900px;margin:0 0 25px}
+.accom-page .stay-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin:25px 0 20px}
+.accom-page .stay-card{position:relative;background:#fff;border:1px solid var(--ac-line);border-radius:18px;padding:25px;box-shadow:0 8px 24px #173a4510;display:flex;flex-direction:column;min-width:0}
+.accom-page .stay-card.featured{border-top:4px solid var(--ac-teal);padding-top:22px}
+.accom-page .stay-type{font-size:11px;letter-spacing:.13em;text-transform:uppercase;font-weight:900;color:var(--ac-teal);margin-bottom:10px}
+.accom-page .stay-card h3{font-size:23px;line-height:1.2;margin:0 0 10px;color:var(--ac-ink)}
+.accom-page .stay-card p{font-size:14px;line-height:1.65;color:var(--ac-muted);margin:0 0 13px}
+.accom-page .stay-price{font-size:25px;font-weight:900;letter-spacing:-.03em;color:var(--ac-teal);margin:2px 0 12px}
+.accom-page .stay-price small{font-size:12px;font-weight:700;letter-spacing:0;color:var(--ac-muted)}
+.accom-page .stay-facts{list-style:none;padding:0;margin:0 0 20px;display:grid;gap:8px}
+.accom-page .stay-facts li{font-size:13px;color:#344b5d;padding-left:21px;position:relative;line-height:1.5}
+.accom-page .stay-facts li:before{content:"✓";position:absolute;left:0;top:0;color:var(--ac-teal);font-weight:900}
+.accom-page .stay-card .btn{margin-top:auto;align-self:flex-start;background:var(--ac-teal);color:#fff;border:0;border-radius:9px;padding:11px 16px;font-size:14px;box-shadow:0 5px 12px #087f7825}
+.accom-page .stay-card .btn:hover{background:#066861}
+.accom-page .notice{border:1px solid #d9e9e5;border-radius:15px;background:#eaf6f2;padding:20px 23px;margin-top:22px}
+.accom-page .notice h3{font-size:18px;margin:0 0 8px;color:#123b40}
+.accom-page .notice ul{margin:0;padding-left:20px;color:#365663;font-size:14px;display:grid;gap:5px}
+.accom-page .hotel-panel{background:#fff;border:1px solid var(--ac-line);border-radius:18px;overflow:hidden;box-shadow:0 8px 24px #173a4509}
+.accom-page .hotel-panel .table-wrap{overflow-x:auto}
+.accom-page .hotel-table{border-collapse:collapse;width:100%;min-width:720px;font-size:14px}
+.accom-page .hotel-table th{background:#103943;color:#fff;text-align:left;font-size:12px;text-transform:uppercase;letter-spacing:.06em;padding:15px 17px}
+.accom-page .hotel-table td{padding:15px 17px;border-bottom:1px solid #e7efed;vertical-align:top;color:#405769}
+.accom-page .hotel-table tbody tr:nth-child(even){background:#f6faf9}
+.accom-page .hotel-table tbody tr:last-child td{border-bottom:0}
+.accom-page .hotel-table td:first-child{font-weight:800;color:var(--ac-ink);min-width:190px}
+.accom-page .hotel-table a{color:#07505a;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:3px;font-weight:800}
+/* High-contrast contact details: dark teal on light table rows, warm gold on the dark assistance panel. */
+.accom-page .hotel-table a[href^="tel:"],.accom-page .hotel-table a[href^="mailto:"]{color:#073f4a;font-weight:850;text-decoration-thickness:2px}
+.accom-page .contact-card a[href^="tel:"],.accom-page .contact-card a[href^="mailto:"]{color:#fff;font-weight:900;text-decoration-thickness:2px;text-decoration-color:#fff}
+.accom-page .contact-card a[href^="tel:"]:focus-visible,.accom-page .contact-card a[href^="mailto:"]:focus-visible,.accom-page .hotel-table a[href^="tel:"]:focus-visible,.accom-page .hotel-table a[href^="mailto:"]:focus-visible{outline:3px solid #f0b84b;outline-offset:3px;border-radius:2px}
+.accom-page .distance{display:inline-block;border-radius:999px;background:#e5f5f0;color:#08756d;padding:4px 9px;font-size:12px;font-weight:850;white-space:nowrap}
+.accom-page .option-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:22px}
+.accom-page .option-card{background:#fff;border:1px solid var(--ac-line);border-radius:14px;padding:19px}
+.accom-page .option-icon{width:40px;height:40px;border-radius:12px;background:var(--ac-mint);display:grid;place-items:center;font-size:21px;margin-bottom:13px}
+.accom-page .option-card h3{font-size:17px;line-height:1.25;margin:0 0 7px;color:var(--ac-ink)}
+.accom-page .option-card p{font-size:13px;line-height:1.6;color:var(--ac-muted);margin:0}
+.accom-page .advice-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:20px}
+.accom-page .advice-card{background:#fff;border:1px solid var(--ac-line);border-radius:17px;padding:24px}
+.accom-page .advice-card h3{font-size:20px;margin:0 0 12px}
+.accom-page .advice-card ul{margin:0;padding-left:19px;display:grid;gap:8px;color:var(--ac-muted);font-size:14px}
+.accom-page .contact-card{background:linear-gradient(120deg,#0b2d38,#087f78);color:#fff;border-radius:18px;padding:25px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;margin-top:20px}
+.accom-page .contact-card h3{font-size:22px;color:#fff;margin:0 0 6px}
+.accom-page .contact-card p{margin:0;color:#e0f4f0;font-size:14px}
+.accom-page .contact-card a{color:#fff;text-decoration:underline;text-underline-offset:3px;font-weight:800}
+.accom-page .contact-chip{display:inline-block;border:1px solid #ffffff55;border-radius:10px;padding:11px 14px;white-space:nowrap}
+@media(max-width:900px){.accom-page .stay-grid{grid-template-columns:1fr}.accom-page .option-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.accom-page .advice-grid{grid-template-columns:1fr}}
+@media(max-width:560px){.accom-page .accom-hero{padding:48px 0 54px}.accom-page .accom-section{padding-top:38px}.accom-page .option-grid{grid-template-columns:1fr}.accom-page .stay-card{padding:21px}.accom-page .contact-card{align-items:flex-start}.accom-page .contact-chip{white-space:normal}}
+</style>
 </head>
 <body class="inner-page">
 <header class="site-header icms-banner-site-header">
@@ -92,212 +155,123 @@
   </div>
 </div>
 </header>
-<main>
-<section class="section hero-section">
-<div class="container">
-<span class="section-label">ICMS–2027</span>
-<h1>Accommodation</h1>
-<p>Accommodation information for delegates attending the International Conference on Microbiological Sciences, 07–09 January 2027, Ayodhya.</p>
-</div>
-</section>
-
-<section class="section">
-<div class="container">
-<span class="section-label">Stay in Ayodhya</span>
-
-<section class="section">
-  <div class="container">
-    <span class="section-label">Official Conference Accommodation</span>
-    <h2>Accommodation Categories for Participants</h2>
-    <p>
-      Accommodation arrangements for ICMS–2027 participants are outlined
-      below. Delegates are advised to book early. University guest-house
-      and dormitory accommodation will be allotted subject to availability
-      and approved conference arrangements.
-    </p>
-
-    <div class="table-wrap">
-      <table class="fee-table">
-        <thead>
-          <tr>
-            <th>Category</th>
-            <th>For Whom</th>
-            <th>Suggested Accommodation</th>
-            <th>Charges and Allotment Details</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Type 1</strong></td>
-            <td>Delegates and Faculty</td>
-            <td>Hotels</td>
-            <td>
-              The hotel list is available on this page below.
-              Delegates are advised to book on a priority basis.
-              Hotel tariffs and availability should be confirmed
-              directly with the property or booking platform.
-            </td>
-          </tr>
-          <tr>
-            <td><strong>Type 2</strong></td>
-            <td>Faculty and Research Students</td>
-            <td>Nearby Guest House(s)</td>
-            <td>
-              <strong>₹1,500 per participant</strong> for 3 nights
-              on a sharing basis.<br>
-              <strong>Stay:</strong> 6 January 2027, 12:00 PM to
-              9 January 2027, 9:00 AM.<br>
-              <strong>Advance:</strong> 50% of the accommodation
-              fee (₹750 per participant).<br>
-              <strong>Capacity:</strong> 44 beds available.<br>
-              Room allotment is subject to availability and
-              approved conference arrangements.
-    
-<br><br>
-<a href="https://forms.gle/tfEd5j2h1hFBitgq6"
-   target="_blank"
-   rel="noopener noreferrer"
-   class="btn"
-   style="border: 2px solid #087f78; border-radius: 6px; padding: 10px 18px; display: inline-block; text-decoration: none;">
-  Book Type 2 Accommodation
-</a>
-
-</td>
-          </tr>
-          <tr>
-            <td><strong>Type 3</strong></td>
-            <td>Research Scholars and Students</td>
-            <td>Guest House / Dormitory</td>
-            <td>
-              <strong>Advance payment: ₹750 per person</strong>
-              for shared accommodation for 3 nights.<br>
-              <strong>Stay:</strong> 6 January 2027, 12:00 PM to
-              9 January 2027, 9:00 AM.<br>
-              <strong>Capacity:</strong> 170 beds available.<br>
-              Accommodation is subject to availability and
-              conference registration requirements.
-
-<br><br>
-<a href="https://forms.gle/ZEkZQB1uWb7JTKvC7"
-   target="_blank"
-   rel="noopener noreferrer"
-   class="btn"
-   style="border: 2px solid #087f78; border-radius: 6px; padding: 10px 18px; display: inline-block; text-decoration: none;">
-  Book Type 3 Accommodation
-</a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+<main class="accom-page">
+  <section class="accom-hero">
+    <div class="container hero-inner">
+      <div class="eyebrow">ICMS–2027 · Delegate information</div>
+      <h1>Stay comfortably<br>in Ayodhya</h1>
+      <p>Plan your visit to the International Conference on Microbiological Sciences, 07–09 January 2027. Review the conference accommodation options and nearby hotels before making your travel arrangements.</p>
+      <div class="hero-pills"><span>07–09 January 2027</span><span>Dr. Rammanohar Lohia Avadh University</span><span>Early booking recommended</span></div>
     </div>
+  </section>
 
-    <div class="info-card">
-      <h3>Important Accommodation Notes</h3>
-      <ul>
-        <li>Final accommodation depends on availability and confirmation from the concerned facility.</li>
-        <li>For Type 2, 50% of the accommodation fee must be paid in advance.</li>
-        <li>For Type 3, an advance payment of ₹750 per person is required.</li>
-        <li>Shared accommodation will be allotted subject to availability and applicable registration requirements.</li>
-        <li>Room tariffs, room numbers, check-in/check-out arrangements and the designated contact person may be updated once finalised.</li>
-        <li>Please confirm the booking procedure and payment instructions with the conference organisers before transferring any accommodation payment.</li>
-      </ul>
+  <section class="container accom-section" id="conference-stay">
+    <p class="section-kicker">Official conference accommodation</p>
+    <h2>Choose the stay that suits you</h2>
+    <p class="section-intro">University and shared accommodation is limited and subject to confirmation. Please review the stay period, advance payment and bed capacity carefully before submitting a booking request.</p>
+    <div class="stay-grid">
+      <article class="stay-card">
+        <div class="stay-type">Type 1 · Independent booking</div>
+        <h3>Hotels</h3>
+        <p>For delegates and faculty who prefer to book a hotel directly. A selected list of nearby properties and booking links is provided below.</p>
+        <div class="stay-price">Tariff varies <small>by property</small></div>
+        <ul class="stay-facts"><li>For delegates and faculty</li><li>Confirm price and availability directly</li><li>Check taxes and cancellation terms</li></ul>
+        <a class="btn" href="#nearby-hotels">Explore nearby hotels</a>
+      </article>
+      <article class="stay-card featured">
+        <div class="stay-type">Type 2 · Shared stay</div>
+        <h3>Guest House</h3>
+        <p>Shared accommodation option intended for faculty and research students, subject to availability and approved conference arrangements.</p>
+        <div class="stay-price">₹1,500 <small>/ participant · 3 nights</small></div>
+        <ul class="stay-facts"><li>Advance payment: ₹750 per participant (50%)</li><li>Stay: 6 Jan, 12:00 PM – 9 Jan, 9:00 AM</li><li>Capacity: 44 beds</li></ul>
+        <a class="btn" href="https://forms.gle/tfEd5j2h1hFBitgq6" target="_blank" rel="noopener noreferrer">Book Type 2 accommodation ↗</a>
+      </article>
+      <article class="stay-card">
+        <div class="stay-type">Type 3 · Student / scholar</div>
+        <h3>Guest House / Dormitory</h3>
+        <p>Economical shared accommodation for research scholars and students, subject to availability and conference registration requirements.</p>
+        <div class="stay-price">₹750 <small>advance / person · 3 nights</small></div>
+        <ul class="stay-facts"><li>Shared accommodation</li><li>Stay: 6 Jan, 12:00 PM – 9 Jan, 9:00 AM</li><li>Capacity: 170 beds</li></ul>
+        <a class="btn" href="https://forms.gle/ZEkZQB1uWb7JTKvC7" target="_blank" rel="noopener noreferrer">Book Type 3 accommodation ↗</a>
+      </article>
     </div>
+    <div class="notice"><h3>Before you book</h3><ul>
+      <li>Allotment of guest-house and dormitory beds is subject to availability and confirmation by the organisers.</li>
+      <li>Type 2 requires 50% advance (₹750); Type 3 requires an advance payment of ₹750 per person.</li>
+      <li>Please confirm booking procedure and payment instructions with the conference organisers before transferring accommodation payments.</li>
+      <li>Room tariffs, room numbers, check-in/check-out arrangements and the designated contact person may be updated once finalised.</li>
+    </ul></div>
+  </section>
 
-    <p>
-      For accommodation assistance, contact the ICMS–2027 organising team:
-      <strong>8707838994 / 9140970406</strong> |
-      <a href="mailto:icms0709@gmail.com">icms0709@gmail.com</a>
-    </p>
-  </div>
-</section>
-<h2>Accommodation Options</h2>
-<p>Delegates may choose from university accommodation, premium hotels, business and mid-range hotels, guest houses and homestays in and around Ayodhya/Faizabad. Availability and tariffs may vary during the conference period, so early booking is strongly recommended.</p>
-<div class="card-grid">
-<article class="info-card"><h3>University Guest House</h3><p>Limited accommodation may be available through the university, subject to institutional availability and prior confirmation.</p><p><strong>Recommended for:</strong> invited speakers, officials and delegates requiring campus proximity.</p></article>
-<article class="info-card"><h3>Premium Hotels</h3><p>Higher-end properties are available in Ayodhya and Faizabad for delegates seeking enhanced facilities.</p></article>
-<article class="info-card"><h3>Business &amp; Mid-Range Hotels</h3><p>Several hotels are located within a short drive of the conference venue and provide practical options for academic and professional delegates.</p></article>
-<article class="info-card"><h3>Budget Hotels &amp; Homestays</h3><p>Budget hotels, guest houses and homestays provide economical accommodation options for students and research scholars.</p></article>
-</div>
-</div>
-</section>
+  <section class="container accom-section" id="nearby-hotels">
+    <p class="section-kicker">Near the university</p>
+    <h2>Selected nearby accommodation</h2>
+    <p class="section-intro">The distances below are approximate and measured from Dr. Rammanohar Lohia Avadh University. Use the links to view booking listings or map locations, and reconfirm details directly before booking.</p>
+    <div class="hotel-panel"><div class="table-wrap"><table class="hotel-table">
+      <thead><tr><th>Property</th><th>Approx. distance</th><th>Category</th><th>Booking / contact</th></tr></thead>
+      <tbody>
+        <tr><td>Cygnett Collection KK Hotel Ayodhya</td><td><span class="distance">~0.36 km</span></td><td>Hotel</td><td><a href="https://www.makemytrip.com/hotels/ayodhya-hotels-near-dr_ram_manohar_lohia_avadh_university_ayodhya.html" target="_blank" rel="noopener noreferrer">View listings ↗</a></td></tr>
+        <tr><td>Ramjanki Inn</td><td><span class="distance">~0.70 km</span></td><td>Hotel</td><td><a href="https://www.makemytrip.com/hotels/ayodhya-hotels-near-dr_ram_manohar_lohia_avadh_university_ayodhya.html" target="_blank" rel="noopener noreferrer">View listings ↗</a></td></tr>
+        <tr><td>Ayodhyam, Ayodhya – IHCL SeleQtions</td><td><span class="distance">~1.2 km</span></td><td>Premium hotel</td><td><a href="https://www.goibibo.com/hotels/hotels-in-ayodhya/near-dr-ram-manohar-lohia-avadh-university-ayodhya-lh/" target="_blank" rel="noopener noreferrer">View listings ↗</a></td></tr>
+        <tr><td>Hotel Neelkanth</td><td><span class="distance">~1.2 km</span></td><td>Hotel</td><td><a href="https://www.goibibo.com/hotels/hotels-in-ayodhya/near-dr-ram-manohar-lohia-avadh-university-ayodhya-lh/" target="_blank" rel="noopener noreferrer">View listings ↗</a></td></tr>
+        <tr><td>Royal Palm Inn Ayodhya</td><td><span class="distance">~1.1 km</span></td><td>Hotel</td><td><a href="https://www.makemytrip.com/hotels/ayodhya-hotels-near-dr_ram_manohar_lohia_avadh_university_ayodhya.html" target="_blank" rel="noopener noreferrer">View listings ↗</a></td></tr>
+        <tr><td>Anandam Palace</td><td><span class="distance">~1.7 km</span></td><td>Hotel</td><td><a href="https://www.goibibo.com/hotels/hotels-in-ayodhya/near-dr-ram-manohar-lohia-avadh-university-ayodhya-lh/" target="_blank" rel="noopener noreferrer">View listings ↗</a></td></tr>
+        <tr><td>Hotel Sudarshan</td><td><span class="distance">~1.0 km</span></td><td>Hotel</td><td>Phone: <a href="tel:9070755755">9070 755 755</a><br><a href="https://maps.app.goo.gl/yZwJxsyTZq68tcBz8" target="_blank" rel="noopener noreferrer">View map ↗</a></td></tr>
+        <tr><td>Hotel Krishna Palace</td><td><span class="distance">~2.5 km</span></td><td>Hotel</td><td>Phone: <a href="tel:8874210003">8874210003</a> / <a href="tel:8874210002">8874210002</a><br>Email: <a href="mailto:hotelkrishnapalace@gmail.com">hotelkrishnapalace@gmail.com</a><br><a href="https://www.google.com/maps/search/?api=1&amp;query=Hotel+Krishna+Palace+Ayodhya" target="_blank" rel="noopener noreferrer">View map ↗</a></td></tr>
+        <tr><td>Tirupati Hotel</td><td><span class="distance">~3.0 km</span></td><td>Hotel</td><td>Phone: <a href="tel:+916392820081">+91 6392820081</a>, <a href="tel:9415104733">9415104733</a>, <a href="tel:6306904505">6306904505</a><br><a href="https://maps.app.goo.gl/miRUB8whS7QzqcVR6" target="_blank" rel="noopener noreferrer">View map ↗</a></td></tr>
+      </tbody>
+    </table></div></div>
+  </section>
 
-<section class="section">
-<div class="container">
-<span class="section-label">Near the Venue</span>
-<h2>Selected Nearby Accommodation</h2>
-<p>Current online listings show several properties close to Dr. Rammanohar Lohia Avadh University. Distances are approximate; tariffs and availability must be reconfirmed before booking.</p>
-<div class="table-wrap">
-<table class="fee-table">
-<thead><tr><th>Property</th><th>Approx. distance from RMLAU</th><th>Category</th><th>Booking</th></tr></thead>
-<tbody>
-<tr><td>Cygnett Collection KK Hotel Ayodhya</td><td>~0.36 km</td><td>Hotel</td><td><a href="https://www.makemytrip.com/hotels/ayodhya-hotels-near-dr_ram_manohar_lohia_avadh_university_ayodhya.html" target="_blank" rel="noopener">View listings</a></td></tr>
-<tr><td>Ramjanki Inn</td><td>~0.70 km</td><td>Hotel</td><td><a href="https://www.makemytrip.com/hotels/ayodhya-hotels-near-dr_ram_manohar_lohia_avadh_university_ayodhya.html" target="_blank" rel="noopener">View listings</a></td></tr>
-<tr><td>Ayodhyam, Ayodhya – IHCL SeleQtions</td><td>~1.2 km</td><td>Premium hotel</td><td><a href="https://www.goibibo.com/hotels/hotels-in-ayodhya/near-dr-ram-manohar-lohia-avadh-university-ayodhya-lh/" target="_blank" rel="noopener">View listings</a></td></tr>
-<tr><td>Hotel Neelkanth</td><td>~1.2 km</td><td>Hotel</td><td><a href="https://www.goibibo.com/hotels/hotels-in-ayodhya/near-dr-ram-manohar-lohia-avadh-university-ayodhya-lh/" target="_blank" rel="noopener">View listings</a></td></tr>
-<tr><td>Royal Palm Inn Ayodhya</td><td>~1.1 km</td><td>Hotel</td><td><a href="https://www.makemytrip.com/hotels/ayodhya-hotels-near-dr_ram_manohar_lohia_avadh_university_ayodhya.html" target="_blank" rel="noopener">View listings</a></td></tr>
-<tr><td>Anandam Palace</td><td>~1.7 km</td><td>Hotel</td><td><a href="https://www.goibibo.com/hotels/hotels-in-ayodhya/near-dr-ram-manohar-lohia-avadh-university-ayodhya-lh/" target="_blank" rel="noopener">View listings</a></td></tr>
-<tr><td>Hotel Krishna Palace</td><td>~2.5 km</td><td>Hotel</td><td>Contact: <a href="tel:8874210003">8874210003</a>; <a href="tel:8874210002">8874210002</a><br>Email: <a href="mailto:hotelkrishnapalace@gmail.com">hotelkrishnapalace@gmail.com</a><br>Location: <a href="https://www.google.com/maps/search/?api=1&query=Hotel+Krishna+Palace+Ayodhya" target="_blank" rel="noopener">View map</a></td></tr>
-<tr><td>Tirupati Hotel</td><td>~3.0 km</td><td>Hotel</td><td>Contact: <a href="tel:+916392820081">+91 6392820081</a>; <a href="tel:9415104733">9415104733</a>; <a href="tel:6306904505">6306904505</a><br>Location: <a href="https://maps.app.goo.gl/miRUB8whS7QzqcVR6" target="_blank" rel="noopener">View map</a></td></tr>
-<tr><td>Hotel Sudarshan</td><td>~1.0 km</td><td>Hotel</td><td>Contact: <a href="tel:9070755755">9070 755 755</a><br>Location: <a href="https://maps.app.goo.gl/yZwJxsyTZq68tcBz8" target="_blank" rel="noopener">View map</a></td></tr>
-</tbody>
-</table>
-</div>
-</div>
-</section>
+  <section class="container accom-section">
+    <p class="section-kicker">Other stay options</p>
+    <h2>Accommodation for every preference</h2>
+    <p class="section-intro">Beyond the conference guest-house options, delegates can explore the following types of accommodation in Ayodhya and Faizabad.</p>
+    <div class="option-grid">
+      <article class="option-card"><div class="option-icon">⌂</div><h3>University Guest House</h3><p>Limited accommodation may be available through the university with prior confirmation. May suit invited speakers, officials and delegates needing campus proximity.</p></article>
+      <article class="option-card"><div class="option-icon">✦</div><h3>Premium Hotels</h3><p>Higher-end properties in Ayodhya and Faizabad for delegates seeking enhanced facilities and services.</p></article>
+      <article class="option-card"><div class="option-icon">▦</div><h3>Business &amp; Mid-Range</h3><p>Practical options for academic and professional delegates, including properties within a short drive of the venue.</p></article>
+      <article class="option-card"><div class="option-icon">⌂</div><h3>Budget Hotels &amp; Homestays</h3><p>Economical options that may be suitable for students and research scholars. Confirm location and amenities before booking.</p></article>
+    </div>
+  </section>
 
-<section class="section">
-<div class="container">
-<span class="section-label">Booking Advice</span>
-<h2>Important Information for Delegates</h2>
-<div class="info-card"><ul>
-<li>January is a busy travel period in Ayodhya; delegates are advised to reserve rooms well in advance.</li>
-<li>Hotel tariffs, room availability, taxes and cancellation policies can change. Confirm final terms directly with the property or booking platform.</li>
-<li>Delegates may mention ICMS–2027 when contacting hotels and ask whether a conference rate is available.</li>
-<li>University guest-house accommodation, if requested, is subject to availability and prior approval.</li>
-<li>The conference organisers do not guarantee the availability, pricing or service quality of third-party accommodation providers.</li>
-</ul></div>
-</div>
-</section>
-
-<section class="section">
-<div class="container">
-<span class="section-label">Conference Assistance</span>
-<h2>Accommodation Assistance</h2>
-<p>For conference-related accommodation assistance, please contact the ICMS–2027 organising team before making travel arrangements.</p>
-<p><strong>Phone:</strong> 8707838994 / 9140970406</p>
-<p><strong>E-mail:</strong> <a href="mailto:icms0709@gmail.com">icms0709@gmail.com</a></p>
-</div>
-</section>
+  <section class="container accom-section">
+    <p class="section-kicker">Plan ahead</p>
+    <h2>Useful booking advice</h2>
+    <div class="advice-grid">
+      <div class="advice-card"><h3>Before confirming a hotel</h3><ul>
+        <li>January is a busy travel period in Ayodhya; reserve rooms well in advance.</li>
+        <li>Confirm tariffs, taxes, availability and cancellation policies directly with the property or booking platform.</li>
+        <li>Ask whether a conference rate is available and mention ICMS–2027 when contacting hotels.</li>
+      </ul></div>
+      <div class="advice-card"><h3>Please note</h3><ul>
+        <li>University guest-house accommodation, if requested, requires prior approval and is subject to availability.</li>
+        <li>The conference organisers cannot guarantee availability, pricing or service quality at third-party accommodation providers.</li>
+        <li>Hotel distances and online listings are indicative and should be reconfirmed before travel.</li>
+      </ul></div>
+    </div>
+    <div class="contact-card"><div><h3>Need accommodation assistance?</h3><p>Contact the ICMS–2027 organising team before finalising your travel arrangements.</p><p style="margin-top:8px"><a href="mailto:icms0709@gmail.com">icms0709@gmail.com</a></p></div><div class="contact-chip">☎ <a href="tel:8707838994">8707838994</a> / <a href="tel:9140970406">9140970406</a></div></div>
+  </section>
 </main>
-
 <footer class="site-footer">
 <div class="container">
 <p><strong>International Conference on Microbiological Sciences (ICMS–2027)</strong></p>
 <p>07–09 January 2027 | Department of Microbiology, Dr. Rammanohar Lohia Avadh University, Ayodhya</p>
 </div>
 </footer>
-
 <script>
 document.addEventListener("DOMContentLoaded", function () {
     const menuButton = document.querySelector(".menu-toggle");
     const nav = document.querySelector(".nav");
-
     if (menuButton && nav) {
         menuButton.setAttribute("aria-expanded", "false");
-
         menuButton.addEventListener("click", function () {
             const isOpen = nav.classList.toggle("open");
-
             menuButton.setAttribute("aria-expanded", String(isOpen));
-            menuButton.setAttribute(
-                "aria-label",
-                isOpen ? "Close menu" : "Open menu"
-            );
+            menuButton.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
         });
     }
 });
 </script>
-</body>
-</html>
 </body>
 </html>
