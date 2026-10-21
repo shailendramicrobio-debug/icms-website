@@ -37,6 +37,14 @@
 .accom-page .notice{border:1px solid #d9e9e5;border-radius:15px;background:#eaf6f2;padding:20px 23px;margin-top:22px}
 .accom-page .notice h3{font-size:18px;margin:0 0 8px;color:#123b40}
 .accom-page .notice ul{margin:0;padding-left:20px;color:#365663;font-size:14px;display:grid;gap:5px}
+.accom-page .bank-details{margin-top:18px;padding:18px;background:#fff;border:1px solid #cfe3de;border-radius:12px}
+.accom-page .bank-details h4{margin:0 0 14px;color:#123b40;font-size:17px;line-height:1.35}
+.accom-page .bank-details-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.accom-page .bank-detail{min-width:0;background:#f5faf8;border:1px solid #e0eeea;border-radius:8px;padding:11px 13px}
+.accom-page .bank-detail span{display:block;color:#5d7082;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px}
+.accom-page .bank-detail strong{display:block;color:#142c42;font-size:14px;overflow-wrap:anywhere}
+.accom-page .bank-note{margin:12px 0 0;color:#5d7082;font-size:12px;line-height:1.5}
+@media(max-width:560px){.accom-page .bank-details-grid{grid-template-columns:1fr}}
 .accom-page .hotel-panel{background:#fff;border:1px solid var(--ac-line);border-radius:18px;overflow:hidden;box-shadow:0 8px 24px #173a4509}
 .accom-page .hotel-panel .table-wrap{overflow-x:auto}
 .accom-page .hotel-table{border-collapse:collapse;width:100%;min-width:720px;font-size:14px}
@@ -198,9 +206,21 @@
     <div class="notice"><h3>Before you book</h3><ul>
       <li>Allotment of guest-house and dormitory beds is subject to availability and confirmation by the organisers.</li>
       <li>Type 2 requires 50% advance (₹750); Type 3 requires an advance payment of ₹750 per person.</li>
+      <li>Please use the bank details below for Type 2 and Type 3 accommodation advance payments. Mention the accommodation type in your payment remarks and retain the transaction receipt.</li>
       <li>Please confirm booking procedure and payment instructions with the conference organisers before transferring accommodation payments.</li>
       <li>Room tariffs, room numbers, check-in/check-out arrangements and the designated contact person may be updated once finalised.</li>
-    </ul></div>
+    </ul>
+      <div class="bank-details" aria-label="Bank details for Type 2 and Type 3 accommodation booking">
+        <h4>Bank Details for Accommodation Booking (Type 2 and Type 3)</h4>
+        <div class="bank-details-grid">
+          <div class="bank-detail"><span>Account Name</span><strong>Finance Officer, Awadh University, Ayodhya</strong></div>
+          <div class="bank-detail"><span>Bank Name</span><strong>Central Bank of India</strong></div>
+          <div class="bank-detail"><span>Account Number</span><strong>2204212057</strong></div>
+          <div class="bank-detail"><span>IFSC Code</span><strong>CBIN0283302</strong></div>
+        </div>
+        <p class="bank-note">Please verify these details with the university Finance Office or conference organisers before making a transfer.</p>
+      </div>
+    </div>
   </section>
 
   <section class="container accom-section" id="nearby-hotels">
