@@ -872,3 +872,21 @@ body.inner-page main .section.section-dark .timeline-item p{color:#29445f}
     opacity: 0;
   }
 }
+.new-label {
+  display: inline-block;
+  background: #ff0000;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 3px 7px;
+  border-radius: 4px;
+  margin-left: 6px;
+  vertical-align: super;
+  animation: newBlink 1s infinite;
+}
+
+@keyframes newBlink {
+  50% {
+    opacity: 0.3;
+  }
+}
