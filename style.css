@@ -861,3 +861,14 @@ body.inner-page main .section.section-dark .timeline-item p{color:#29445f}
 .template-paper p:nth-of-type(4) {
     font-size: 12px;
 }
+.blinking-text {
+  color: #ff0000;
+  font-weight: bold;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
