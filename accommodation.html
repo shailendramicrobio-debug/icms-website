@@ -34,6 +34,11 @@
 .accom-page .stay-facts li:before{content:"✓";position:absolute;left:0;top:0;color:var(--ac-teal);font-weight:900}
 .accom-page .stay-card .btn{margin-top:auto;align-self:flex-start;background:var(--ac-teal);color:#fff;border:0;border-radius:9px;padding:11px 16px;font-size:14px;box-shadow:0 5px 12px #087f7825}
 .accom-page .stay-card .btn:hover{background:#066861}
+.accom-page .type3-unavailable{border:2px solid #d9a2a2;background:#fffafa}
+.accom-page .type3-unavailable .stay-type{color:#a33b3b}
+.accom-page .type3-unavailable .stay-price{color:#a33b3b;font-size:23px}
+.accom-page .availability-closed{display:inline-block;margin-top:auto;align-self:flex-start;background:#a83232;color:#fff;border-radius:9px;padding:11px 16px;font-size:14px;font-weight:850;cursor:not-allowed}
+
 .accom-page .notice{border:1px solid #d9e9e5;border-radius:15px;background:#eaf6f2;padding:20px 23px;margin-top:22px}
 .accom-page .notice h3{font-size:18px;margin:0 0 8px;color:#123b40}
 .accom-page .notice ul{margin:0;padding-left:20px;color:#365663;font-size:14px;display:grid;gap:5px}
@@ -198,31 +203,31 @@
         <ul class="stay-facts"><li>Advance payment: ₹750 per participant (50%)</li><li>Stay: 6 Jan, 12:00 PM – 9 Jan, 9:00 AM</li><li>Capacity: 44 beds</li></ul>
         <a class="btn" href="https://forms.gle/tfEd5j2h1hFBitgq6" target="_blank" rel="noopener noreferrer">Book Type 2 accommodation ↗</a>
       </article>
-      <article class="stay-card">
+      <article class="stay-card type3-unavailable" aria-label="Type 3 accommodation fully booked">
         <div class="stay-type">Type 3 · Student / scholar</div>
         <h3>Guest House / Dormitory</h3>
-        <p>Economical shared accommodation for research scholars and students, subject to availability and conference registration requirements.</p>
-        <div class="stay-price">₹750 <small>advance / person · 3 nights</small></div>
+        <p>Economical shared accommodation for research scholars and students.</p>
+        <div class="stay-price">Fully booked</div>
         <ul class="stay-facts"><li>Shared accommodation</li><li>Stay: 6 Jan, 12:00 PM – 9 Jan, 9:00 AM</li><li>Capacity: 170 beds</li></ul>
-        <a class="btn" href="https://forms.gle/ZEkZQB1uWb7JTKvC7" target="_blank" rel="noopener noreferrer">Book Type 3 accommodation ↗</a>
+        <span class="availability-closed" role="status">Overbooked — Not Available</span>
       </article>
     </div>
     <div class="notice"><h3>Before you book</h3><ul>
       <li>Allotment of guest-house and dormitory beds is subject to availability and confirmation by the organisers.</li>
-      <li>Type 2 requires 50% advance (₹750); Type 3 requires an advance payment of ₹750 per person.</li>
-      <li>Please use the bank details below for Type 2 and Type 3 accommodation advance payments. Mention the accommodation type in your payment remarks and retain the transaction receipt.</li>
+      <li>Type 2 requires 50% advance (₹750). Type 3 (Guest House / Dormitory) is fully booked and is no longer accepting booking requests or payments.</li>
+      <li>Please use the bank details below only for confirmed Type 2 accommodation advance payments. Mention the accommodation type in your payment remarks and retain the transaction receipt.</li>
       <li>Please confirm booking procedure and payment instructions with the conference organisers before transferring accommodation payments.</li>
       <li>Room tariffs, room numbers, check-in/check-out arrangements and the designated contact person may be updated once finalised.</li>
     </ul>
-      <div class="bank-details" aria-label="Bank details for Type 2 and Type 3 accommodation booking">
-        <h4>Bank Details for Accommodation Booking (Type 2 and Type 3)</h4>
+      <div class="bank-details" aria-label="Bank details for Type 2 accommodation booking">
+        <h4>Bank Details for Type 2 Accommodation Booking</h4>
         <div class="bank-details-grid">
           <div class="bank-detail"><span>Account Name</span><strong>Finance Officer, Awadh University, Ayodhya</strong></div>
           <div class="bank-detail"><span>Bank Name</span><strong>Central Bank of India</strong></div>
           <div class="bank-detail"><span>Account Number</span><strong>2204212057</strong></div>
           <div class="bank-detail"><span>IFSC Code</span><strong>CBIN0283302</strong></div>
         </div>
-        <p class="bank-note">Please mention <strong>ICMS–2027 Type 2 Accommodation</strong> / <strong>ICMS–2027 Type 3 Accommodation</strong> in the payment remarks and retain the transaction receipt for booking confirmation</p>
+        <p class="bank-note">Please mention <strong>ICMS–2027 Type 2 Accommodation</strong> in the payment remarks and retain the transaction receipt for booking confirmation. No payment should be made for Type 3 accommodation, which is fully booked.</p>
       </div>
     </div>
   </section>
