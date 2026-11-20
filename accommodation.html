@@ -38,6 +38,10 @@
 .accom-page .type3-unavailable .stay-type{color:#5d7082}
 .accom-page .type3-unavailable .stay-price{color:#5d7082;font-size:23px}
 .accom-page .availability-closed{display:inline-block;margin-top:auto;align-self:flex-start;background:#5d7082;color:#fff;border-radius:9px;padding:11px 16px;font-size:14px;font-weight:850;cursor:not-allowed}
+.accom-page .type2-booked{border:2px solid #d7a5a5;background:#fffafa}
+.accom-page .type2-booked .stay-type{color:#9b3434}
+.accom-page .type2-booked .stay-price{color:#9b3434}
+.accom-page .fully-booked-label{display:inline-block;margin:0 0 12px;align-self:flex-start;background:#9b3434;color:#fff;border-radius:999px;padding:6px 11px;font-size:12px;font-weight:900;letter-spacing:.04em;text-transform:uppercase}
 
 .accom-page .notice{border:1px solid #d9e9e5;border-radius:15px;background:#eaf6f2;padding:20px 23px;margin-top:22px}
 .accom-page .notice h3{font-size:18px;margin:0 0 8px;color:#123b40}
@@ -195,13 +199,14 @@
         <ul class="stay-facts"><li>For delegates and faculty</li><li>Confirm price and availability directly</li><li>Check taxes and cancellation terms</li></ul>
         <a class="btn" href="#nearby-hotels">Explore nearby hotels</a>
       </article>
-      <article class="stay-card featured">
+      <article class="stay-card type2-booked" aria-label="Type 2 accommodation fully booked">
         <div class="stay-type">Type 2 · Shared stay</div>
         <h3>Guest House</h3>
-        <p>Shared accommodation option intended for faculty and research students, subject to availability and approved conference arrangements.</p>
+        <span class="fully-booked-label" role="status">Fully Booked</span>
+        <p>This shared accommodation option for faculty and research students has reached its booking capacity. Bookings are closed.</p>
         <div class="stay-price">₹1,500 <small>/ participant · 3 nights</small></div>
-        <ul class="stay-facts"><li>Advance payment: ₹750 per participant (50%)</li><li>Stay: 6 Jan, 12:00 PM – 9 Jan, 9:00 AM</li><li>Capacity: 44 beds</li></ul>
-        <a class="btn" href="https://forms.gle/tfEd5j2h1hFBitgq6" target="_blank" rel="noopener noreferrer">Book Type 2 accommodation ↗</a>
+        <ul class="stay-facts"><li>Stay: 6 Jan, 12:00 PM – 9 Jan, 9:00 AM</li><li>Capacity: 44 beds</li><li>New booking requests are not being accepted</li></ul>
+        <span class="availability-closed" role="status">Fully Booked · Booking Closed</span>
       </article>
       <article class="stay-card type3-unavailable" aria-label="Type 3 accommodation facility removed">
         <div class="stay-type">Type 3 · Student / scholar</div>
@@ -213,21 +218,21 @@
       </article>
     </div>
     <div class="notice"><h3>Before you book</h3><ul>
-      <li>Allotment of guest-house and dormitory beds is subject to availability and confirmation by the organisers.</li>
-      <li>Type 2 requires 50% advance (₹750). Type 3 (Guest House / Dormitory) facility has been removed due to limited participant interest. Participants are advised to select Type 2 accommodation instead.</li>
-      <li>Please use the bank details below only for confirmed Type 2 accommodation advance payments. Mention the accommodation type in your payment remarks and retain the transaction receipt.</li>
-      <li>Please confirm booking procedure and payment instructions with the conference organisers before transferring accommodation payments.</li>
+      <li>Type 2 Guest House accommodation is fully booked and no further booking requests can be accepted.</li>
+      <li>Type 2 Guest House accommodation is fully booked. Type 3 (Guest House / Dormitory) facility has been removed due to limited participant interest. Please explore nearby hotels or other independent accommodation options.</li>
+      <li>Do not transfer payment for Type 2 accommodation; bookings are closed because the facility is fully booked.</li>
+      <li>For other accommodation assistance, contact the conference organisers before making travel arrangements.</li>
       <li>Room tariffs, room numbers, check-in/check-out arrangements and the designated contact person may be updated once finalised.</li>
     </ul>
       <div class="bank-details" aria-label="Bank details for Type 2 accommodation booking">
-        <h4>Bank Details for Type 2 Accommodation Booking</h4>
+        <h4>Type 2 Accommodation — Payment Not Required</h4>
         <div class="bank-details-grid">
           <div class="bank-detail"><span>Account Name</span><strong>Finance Officer, Awadh University, Ayodhya</strong></div>
           <div class="bank-detail"><span>Bank Name</span><strong>Central Bank of India</strong></div>
           <div class="bank-detail"><span>Account Number</span><strong>2204212057</strong></div>
           <div class="bank-detail"><span>IFSC Code</span><strong>CBIN0283302</strong></div>
         </div>
-        <p class="bank-note">Please mention <strong>ICMS–2027 Type 2 Accommodation</strong> in the payment remarks and retain the transaction receipt for booking confirmation. Type 3 accommodation has been removed; participants are advised to choose Type 2 instead.</p>
+        <p class="bank-note"><strong>Type 2 is fully booked. Please do not make any payment using the bank details displayed below.</strong> Type 3 accommodation has been removed; participants are advised to explore nearby hotels or other independent accommodation options.</p>
       </div>
     </div>
   </section>
